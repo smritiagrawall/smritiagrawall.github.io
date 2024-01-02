@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>NTV App</title>
+  <link rel="stylesheet" href="https://grads.promulgateinnovations.com/assets/css/lib/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...">
+  <script src="https://grads.promulgateinnovations.com/assets/js/lib/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="https://grads.promulgateinnovations.com/assets/js/lib/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpc1NR0QVZM6Qn8GlVMlV7SvS6Z7qNIFs&callback=initMap" async defer></script>
+
+  <style>
+    .fa {
+      color: inherit !important;
+    }
+
+    #map {
+        height: 21.4rem;
+        width: 100%;
+        
+      }
+
+
+    .circle{
+        margin-left: 1rem;
+    }
+    .circle img {
+        width: 2.5rem;
+        height: 2.5rem; 
+        border-radius: 50%; 
+    }
+
+    .view-all-link{
+        text-decoration: none;
+        color: rgb(137, 137, 137);
+    }
+     
+    .toggle2 label {
+        cursor: pointer;
+        margin-bottom: 10px;
+        color: #595959;
+      }
+  
+      .toggle2 input:checked + label {
+        font-weight: bold;
+        color: #007bff; 
+      }
+
+    @media (max-width: 767px) {
+        h2 {
+            font-size: 1.2rem !important;
+        }
+   
+        p.para{
+            font-size: 0.8rem !important;
+        }
+        p {
+            font-size: 1rem !important;
+        }
+
+        pre {
+            font-size: 1.2rem !important;
+        }
+
+        h3{
+            font-size: 0.7rem;
+        }
+        h1{
+            font-size:1.2rem;
+        }
+        .smaller-height-div {
+            height: 3rem !important; 
+        }
+
+        .height-div{
+            height:4rem !important;
+        }
+
+        canvas#barChart {
+            height: 4rem; 
+          }
+         
+        canvas#donutChart{
+            height: 13.5rem;
+        }  
+        .last-div p{
+            font-size: 0.7rem !important;
+            margin-left: 0.2rem !important;
+        }
+       .last-div h3{
+        font-size: 0.8rem !important;
+        margin-left: 0.2rem !important;
+       }
+       .revenue-smaller h3{
+        font-size: 0.8rem !important;
+        margin-left: 3rem !important;
+       }
+       .leftp  {
+        font-size: 0.7rem !important;
+        margin-left: 1.5rem !important;
+        
+       }
+       .rightp {
+        font-size: 0.7rem !important;
+        margin-right: 5rem !important;
+       }
+       .next-small h2{
+        font-size: 1rem !important;
+        margin-right:1.6rem !important;
+       }
+       .radio-container label {
+        cursor: pointer;
+        font-weight: normal;
+    }
+
+    .radio-container input[type="radio"]:checked + label {
+        font-weight: bold;
+    }
+
+    .toggle2 label{
+        font-size: 0.8rem !important;
+    }
+
+    .toggle3 label{
+        font-size: 0.8rem !important;
+    }
+    }
+  </style>
+
+  <script>
+    function initMap() {
+      // Coordinates for the map center
+      var myLatLng = { lat: -34.397, lng: 150.644 };
+
+      // Create a map centered at myLatLng
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: myLatLng,
+        zoom: 8
+      });
+
+      // Create a marker positioned at myLatLng
+      var marker = new google.maps.Marker({
+        map: map,
+        position: myLatLng,
+        title: 'Hello World!'
+      });
+    }
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container-fluid " style="background-color: rgb(245, 245, 248); height:100%; width:100%; padding: 20px;">
+
+  <div class="row" style="margin-bottom: 20px;">
+      
+      <div class="col-md-3 mb-2">
+        <div class="bg-white p-4 rounded-3" style="height: 13rem; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); ">
+            <div class="d-flex justify-content-between mb-4" style="margin-top:1rem">
+                <i class="fa fa-file-alt" style='font-size: 1.5rem;'></i>
+                <p class="text-success fw-bold mb-0 " style="font-size: 1.1rem;">+18% &#x2191;</p>
+            </div>
+            <p class="text-secondary mb-2" style="font-size: 1.3rem;">Total subscription</p>
+            <h2 style="font-size: 2rem;">10.7 M</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-2" >
+      <div class="bg-white p-4 rounded-3" style="height: 13rem; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+        <div class="d-flex justify-content-between mb-4" style="margin-top:1rem;">
+            <i class="fa fa-chart-line" style='font-size:1.5rem;'></i>
+            <p class="text-success fw-bold mb-0" style="font-size: 1.1rem;">+18% &#x2191;</p>
+          </div> 
+        <p class="text-secondary mb-2" style="font-size: 1.3rem;">Total Revenue</p>
+        <h2 style="font-size: 2rem;">$37,193.00</h2>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-2" >
+      <div class="bg-white p-4 rounded-3" style="height: 13rem; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+        <div class="d-flex justify-content-between mb-4" style="margin-top:1rem;">
+            <i class="fa fa-users mb-0" style='font-size:1.5rem;'></i>
+            <p class="text-success fw-bold  mb-0" style="font-size: 1.1rem;">+18% &#x2191;</p>
+          </div>
+        <p class="text-secondary mb-2" style="font-size: 1.3rem;">Total Views</p>
+        <h2 style="font-size: 2rem;">983.4 M</h2>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-2" >
+      <div class="bg-white p-4 rounded-3" style="height: 13rem; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+        <div class="d-flex justify-content-between mb-4" style="margin-top:1rem;">
+            <i class="fa fa-shopping-bag" style='font-size:1.5rem;'></i>
+            <p class="text-success fw-bold  mb-0" style="font-size: 1.1rem;">+18% &#x2191;</p>
+          </div>
+        <p class="text-secondary mb-2" style="font-size:1.3rem;">Total watch time</p>
+        <h2 style="font-size: 2rem;">3,500 hours</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="row"  style="margin-top:1rem;">
+
+    <!-- <div class="col-md-6" > -->
+        <div class="col-lg-6 mb-2">
+        <div class="bg-white p-3 rounded" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); height:26rem">
+          <div class="d-flex justify-content-between align-items-center smaller-height-div" style="border-bottom:2px solid rgb(112, 111, 111); height:5rem">
+            <h2 style="font-size:1.5rem">Revenue</h2>
+            <span class="fa fa-ellipsis-h" style="font-size: 1.3rem; margin-right: 1rem; color: rgb(202, 202, 202); "></span>
+          </div>
+          <div class="mt-3">
+            <div class="d-flex justify-content-between">
+                <h1>$112,340</h1>
+                <div class="d-flex toggle">
+                    <div class="row toggle2">
+                        <label for="option1" id="labelOption1" style=" color: #595959;">Monthly</label>
+                        <input type="radio" name="toggle" id="option1" checked style="height: 0.8rem;" >
+                        
+                    </div>
+                
+                    <div class="row toggle2">    
+                        <label for="option2" id="labelOption2" style=" color: #595959;">weekly</label>  
+                        <input type="radio" name="toggle" id="option2" style="height: 0.8rem;" >
+                        
+                    </div>
+            </div>
+
+    
+</div>
+            
+            <div class="bar-container">
+             
+              <div class="container mt-3">
+                <canvas id="barChart"  height="105"></canvas>
+            </div>
+            
+            <script>
+
+                
+
+                var ctxBar = document.getElementById('barChart').getContext('2d');
+                var barChart = new Chart(ctxBar, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                        datasets: [{
+                            data: [10, 20, 15, 10, 15, 30, 12, 28, 5, 25, 12, 15],
+                            backgroundColor: [
+                                'rgb(221, 220, 222)',
+                                'rgb(221, 220, 222)',
+                                'rgb(62, 216, 92)',
+                                'rgb(221, 220, 222)',
+                                'rgb(221, 220, 222)',
+                                'rgb(143, 96, 202)',
+                                'rgb(221, 220, 222)',
+                                'rgb(221, 220, 222)',
+                                'rgb(221, 220, 222)',
+                                'rgb(239, 100, 218)',
+                                'rgb(221, 220, 222)',
+                                'rgb(221, 220, 222)'
+                            ],
+
+                            borderRadius: 5 
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            x: {
+                               
+                                grid: {
+                                    display: false
+                                }
+                            },
+                            y: {
+                                display: false,
+                                beginAtZero: true,
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false 
+                            }
+                        }
+                    }
+                });
+            </script>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- <div class="col-md-6"> -->
+        <div class="col-lg-6 mb-2">
+        <div class="bg-white p-3 rounded" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  height:26rem">
+
+              <div class="d-flex row justify-content-between align-items-center height-div" style="border-bottom: 2px solid rgb(112, 111, 111); height: 5rem">
+                <h4 class="mb-0">Audience</h4>
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="mb-0 mr-auto para" style="color: rgb(100, 100, 100); margin-bottom: 0;">Views gained by all the channels</p>
+                    <i class="fa fa-ellipsis-h mb-4 mr-4" style="font-size: 1.3rem; margin-right: 1rem;"></i>
+                </div>
+            </div>
+            
+      
+              <div class="container mt-3">
+                <canvas id="donutChart" height="290"></canvas>
+              </div>
+              
+              <script>
+                var ctxDonut = document.getElementById('donutChart').getContext('2d');
+                var donutChart = new Chart(ctxDonut, {
+                  type: 'doughnut',
+                  data: {
+                    labels: ['NTV Sports', 'NTV Politics', 'NTV Live', 'NTV Telugu', 'NTV Entertainment'],
+                    datasets: [{
+                      data: [22, 9, 16, 25, 28],
+                      backgroundColor: [
+                        'rgb(108, 179, 242)',
+                        'rgb(120, 221, 120)',
+                        'rgb(241, 228, 132)',
+                        'rgb(228, 101, 139)',
+                        'rgb(234, 181, 8)',
+                      ],
+                    }]
+                  },
+                  options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%', 
+                    plugins: {
+                      legend: {
+                        display: true,
+                        position: 'right',
+                        labels: {
+                          boxWidth: 20,
+                          fontColor: 'black'
+                        }
+                      }
+                    }
+                  }
+                });
+              </script>
+              
+
+
+        </div>
+      </div>
+      
+
+    </div>
+    
+        <div class="row" style="padding: 0.2rem; margin-top:1rem;">
+
+            <div class="col-lg-9 mb-2" style="height: 30rem;">
+                <div class="bg-white p-3 rounded" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); height:30rem">
+                    <div class="d-flex  justify-content-between align-items-center" style="border-bottom: 2px solid rgb(112, 111, 111); height: 4rem">
+                        <h2 style="font-size:1.5rem; margin-left:1rem">Viewers Map</h2>
+                        <div class="d-flex ">
+                            <div class="row toggle3">
+                                <label for="option3">Viewers</label>
+                                <input type="radio" name="toggle" id="option3" checked style="height: 0.8rem;">
+                            </div>
+                        
+                            <div class="row toggle3">
+                                <label for="option4">Subscriber</label>
+                                <input type="radio" name="toggle" id="option4" style="height: 0.8rem;">
+                            </div>
+                    </div>
+                    </div>
+                    <div style="padding-top: 1rem;">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-lg-3 mb-3" style="height: 30rem;">
+                <div class="bg-white p-3 rounded" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); height: 30rem;">
+                    <div class="d-flex  justify-content-between align-items-center" style="border-bottom: 2px solid rgb(112, 111, 111); height: 4rem">
+                        <h2 style="font-size:1.5rem">Channels</h2>
+                        <a href="#" class="view-all-link">View all ></a>
+
+                    </div>
+                    <div class="container" style="margin-top: 1rem;">
+                        <div class="row">
+           
+                            <div class="d-flex" style="padding: top 2rem;">
+                                <div class="circle" style="margin-right: 0.5rem;">
+                                    <img src="ntv_live3.jpg" alt="Telugu TV Logo" >
+                                </div>
+                                    <div class="ml-3" style="margin-left: 0.5rem;">
+                                        <h3 style="font-size: 1rem; font-style:bold"> NTV Telugu </h3>
+                                        <p style="font-size: 0.8rem; margin-bottom:0.7rem">7.89 subscribers</p>
+                                    </div>
+                                </div>
+                        
+                                <div class="d-flex" style="padding: top 2rem;">
+                                    <div class="circle" style="margin-right: 0.5rem;">
+                                        <img src="ntv_live3.jpg" alt="Telugu TV Logo" >
+                                    </div>
+                                        <div style="margin-left: 0.5rem;">
+                                            <h3 style="font-size: 1rem; font-style:bold"> NTV Entertainment</h3>
+                                            <p style="font-size: 0.8rem; margin-bottom:0.7rem">7.89 subscribers</p>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="d-flex" style="padding: top 2rem;">
+                                        <div class="circle" style="margin-right: 0.5rem;">
+                                            <img src="ntv_live3.jpg" alt="Telugu TV Logo" >
+                                        </div>
+                                            <div style="margin-left: 0.5rem;">
+                                                <h3 style="font-size: 1rem; font-style:bold"> NTV Sports</h3>
+                                                <p style="font-size: 0.8rem; margin-bottom:0.7rem">7.68 subscribers</p>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="d-flex" style="padding: top 2rem;">
+                                            <div class="circle" style="margin-right: 0.5rem;">
+                                                <img src="ntv_live3.jpg" alt="Telugu TV Logo" >
+                                            </div>
+                                                <div style="margin-left: 0.5rem;">
+                                                    <h3 style="font-size: 1rem; font-style:bold"> NTV Politics </h3>
+                                                    <p style="font-size: 0.8rem; margin-bottom:0.7rem">7.89 subscribers</p>
+                                                </div>
+                                            </div>
+                        
+                                            <div class="d-flex" style="padding: top 2rem;">
+                                                <div class="circle" style="margin-right: 0.5rem;">
+                                                    <img src="ntv_live3.jpg" alt="Telugu TV Logo" >
+                                                </div>
+                                                    <div style="margin-left: 0.5rem;">
+                                                        <h3 style="font-size: 1rem; font-style:bold">NTV Live</h3>
+                                                        <p style="font-size: 0.8rem; margin-bottom:0.7rem">7.89 subscribers</p>
+                                                    </div>
+                                                </div>
+                        
+                                                <div class="d-flex" style="padding: top 2rem;">
+                                                    <div class="circle" style="margin-right: 0.5rem;">
+                                                        <img src="ntv_live3.jpg" alt="Telugu TV Logo" >
+                                                    </div>
+                                                        <div style="margin-left:0.5rem;">
+                                                            <h3 style="font-size: 1rem; font-style:bold">NTV Lifestyle</h3>
+                                                            <p style="font-size: 0.8rem; margin-bottom:0.7rem">7.89 subscribers</p>
+                                                        </div>
+                                                    </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5 mb-5">
+            <div class="bg-white p-3 rounded" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+                <div class="d-flex row justify-content-between align-items-center next-small" style="border-bottom: 2px solid rgb(112, 111, 111); height: 4rem">
+                    <h2 style="font-size:1.4rem; margin-left:0.4rem">Top revenue generating channels</h2>
+                </div>
+                <div class="d-flex justify-content-between mt-3 head-small">
+                  <p class="ml-3 leftp" style="margin-left: 2.5rem;font-size:0.9rem; color:rgb(126, 126, 126)">All NTV channels</p>
+                  <p class="mr-4 rightp" style="margin-right: 7.7rem;font-size:0.9rem; color:rgb(126, 126, 126)">Estimated revenue</p>
+                </div>
+                <div class="container d-flex ">
+                    <div class="row">
+       
+                        <div class="d-flex justify-content" style="padding: top 2rem;">
+                            <div class="circle" style="margin-left: 0.1rem;">
+                                <img src="ntv_live3.jpg" alt="Telugu TV Logo" >
+                            </div>
+                                <div class="ml-3 last-div" style="margin-left: 0.5rem;">
+                                    <h3 style="font-size: 1rem; font-style:bold"> NTV Telugu </h3>
+                                    <p style="font-size: 0.8rem; margin-bottom:0.7rem"> 7.89 subscribers </p>
+                                </div>
+                                
+                            </div>
+                    
+                            <div class="d-flex" style="padding: top 2rem;">
+                                <div class="circle" style="margin-left: 0.1rem;">
+                                    <img src="ntv_live3.jpg" alt="Telugu TV Logo" >
+                                </div>
+                                    <div class="ml-3 last-div" style="margin-left: 0.5rem;">
+                                        <h3 style="font-size: 1rem; font-style:bold"> NTV Entertainment</h3>
+                                        <p style="font-size: 0.8rem; margin-bottom:0.7rem">7.89 subscribers</p>
+                                    </div>
+                                </div>
+                    
+                                <div class="d-flex" style="padding: top 2rem;">
+                                    <div class="circle" style="margin-left: 0.1rem;">
+                                        <img src="ntv_live3.jpg" alt="Telugu TV Logo" >
+                                    </div>
+                                        <div class="ml-3 last-div" style="margin-left: 0.5rem;">
+                                            <h3 style="font-size: 1rem; font-style:bold"> NTV Sports</h3>
+                                            <p style="font-size: 0.8rem; margin-bottom:0.7rem">7.68 subscribers</p>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="d-flex" style="padding: top 2rem;">
+                                        <div class="circle" style="margin-left: 0.1rem;">
+                                            <img src="ntv_live3.jpg" alt="Telugu TV Logo" >
+                                        </div>
+                                            <div class="ml-3 last-div" style="margin-left: 0.5rem;">
+                                                <h3 style="font-size: 1rem; font-style:bold"> NTV Politics </h3>
+                                                <p style="font-size: 0.8rem; margin-bottom:0.7rem">7.89 subscribers</p>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="d-flex" style="padding: top 2rem;">
+                                            <div class="circle" style="margin-left: 0.1rem;">
+                                                <img src="ntv_live3.jpg" alt="Telugu TV Logo" >
+                                            </div>
+                                                <div class="ml-3 last-div" style="margin-left: 0.5rem;">
+                                                    <h3 style="font-size: 1rem; font-style:bold">NTV Live</h3>
+                                                    <p style="font-size: 0.8rem; margin-bottom:0.7rem">7.89 subscribers</p>
+                                                </div>
+                                            </div>
+                    
+                                            <div class="d-flex" style="padding: top 2rem;">
+                                                <div class="circle" style="margin-left: 0.1rem;">
+                                                    <img src="ntv_live3.jpg" alt="Telugu TV Logo" >
+                                                </div>
+                                                    <div class="ml-3 last-div" style="margin-left:0.5rem;">
+                                                        <h3 style="font-size: 1rem; font-style:bold">NTV Lifestyle</h3>
+                                                        <p style="font-size: 0.8rem; margin-bottom:0.9rem">7.89 subscribers</p>
+                                                    </div>
+                                                </div>
+                    
+                    </div>
+
+                    <div class="row mt-1 revenue-smaller">
+                        <h3 style="font-size: 1rem; font-style:bold">$6.4k- $102.4k</h3>
+                        <h3 style="font-size: 1rem; font-style:bold">$6.4k- $102.4k</h3>
+                        <h3 style="font-size: 1rem; font-style:bold">$6.4k- $102.4k</h3>
+                        <h3 style="font-size: 1rem; font-style:bold">$6.4k- $102.4k</h3>
+                        <h3 style="font-size: 1rem; font-style:bold">$6.4k- $102.4k</h3>
+                        <h3 style="font-size: 1rem; font-style:bold">$6.4k- $102.4k</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+</html>
+
+
+
+
