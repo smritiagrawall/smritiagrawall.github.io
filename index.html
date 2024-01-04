@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
   <title>NTV App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
   <link rel="stylesheet" href="https://grads.promulgateinnovations.com/assets/css/lib/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...">
   <script src="https://grads.promulgateinnovations.com/assets/js/lib/bootstrap/bootstrap.bundle.min.js"></script>
@@ -51,6 +57,135 @@
         font-weight: bold;
         color: #007bff; 
       }
+    
+     .header-div{
+        height: 13rem;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);   
+  
+     }
+
+     .green-text{
+        color: #6BE234;
+     }
+     
+     .icon{
+      font-size: 1.5rem;
+     }
+
+     .header-div p{
+      font-size: 1.19rem;
+     }
+     
+     .header-div h3{
+       font-size: 1.9rem;
+     }
+
+     .header-sub-div{
+        margin-top:1rem;
+     }
+
+     .graph-div{
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+      height:26rem;
+     }
+ 
+     .height-div{
+        padding-left: 1rem;
+       
+    }
+    .border-donut{
+        border-bottom: 2px solid rgb(112, 111, 111);
+        height: 5rem;
+    }
+    .smaller-height-div{
+        border-bottom:2px solid rgb(112, 111, 111);
+         height:5rem;
+         padding-left: 1rem;
+    }
+    
+   #dropdownMenu{
+    cursor: pointer; 
+    color: rgb(115, 115, 115); 
+    font-size: 1.3rem; 
+    margin-right: 1rem;
+
+   }
+ 
+
+   .below-icon{
+    margin-left: 2.3rem;
+   }
+
+   .below-icon h2{
+    color: #504860;
+   }
+
+   .below-icon h3{
+    color: #515050;
+    font-size: 1.5rem;
+   }
+.facebook{
+   /* margin-left: 2rem;*/
+  
+}
+   .facebook p{
+    font-size: 1.3rem;
+    color: #595959;
+    margin-left: 0.7rem;
+
+   }
+
+   .facebook h7{
+    
+    color: #36cb31;
+    font-weight: bold;
+
+   }
+
+ .social-icon{
+    color: #2100b6; 
+    font-size:3.2rem; 
+    margin-left:2.3rem;
+ }
+ .instagram-icon {
+    background-color: #EDEDED;
+    padding: 5px;
+    border-radius: 50%;
+  }
+
+  .social-presence-after-div{
+    height: 40rem;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .last-big-div{
+    height: 17rem; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .status-div{
+  text-align: right;
+  margin-right: 1.3rem;
+
+  }
+  .arrow{
+    font-size:1.8rem;
+  } 
+.last-sub-div2{
+margin-left: 3rem;
+}
+  .last-sub-div h3{
+   font-size: 1.2rem;
+   color: #727272;
+  }
+  .last-sub-div2 h3{
+    font-size: 1.2rem;
+    color: #727272;
+   }
+  .svg-icons{
+    width:3rem;
+     height:3rem;
+     margin-left: 2.4rem;
+  }
+  
+  
 
     @media (max-width: 767px) {
 
@@ -136,6 +271,33 @@
     .toggle3 label{
         font-size: 0.8rem !important;
     }
+
+    .social-presence-after-div{
+        height: 80rem !important;
+         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .last-sub-div h3{
+       font-size: 1rem;
+      }
+      .last-sub-div2 h3{
+        font-size: 1rem;
+       }
+      .status-div h7{
+        font-size: 0.9rem;;
+      }
+      .svg-icons{
+        height: 2.5rem;
+        width: 2.5rem;
+        margin-top: 0.5rem;
+      }
+  
+      .facebook{
+        margin-top: 1rem;
+      }
+      .social-icon{
+      font-size: 2.5rem;
+      }
+
     }
   </style>
 
@@ -169,61 +331,73 @@
   <div class="row" style="margin-bottom: 20px;">
       
       <div class="col-md-3 mb-2">
-        <div class="bg-white p-4 rounded-3" style="height: 13rem; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); ">
-            <div class="d-flex justify-content-between mb-4" style="margin-top:1rem">
-                <i class="fa fa-file-alt" style='font-size: 1.5rem;'></i>
-                <p class="text-success fw-bold mb-0 " style="font-size: 1.1rem;">+18% &#x2191;</p>
+        <div class="bg-white p-4 rounded-3 header-div" >
+            <div class="d-flex justify-content-between mb-4 header-sub-div">
+                <i class="fa fa-file-alt icon"></i>
+                <p class=" fw-bold mb-0 green-text ">+18% &#x2191;</p>
             </div>
-            <p class="text-secondary mb-2" style="font-size: 1.3rem;">Total subscription</p>
-            <h2 style="font-size: 2rem;">10.7 M</h2>
+            <p class="text-secondary mb-2 ">Total Subscriptions</p>
+            <h2 >10.7 M</h2>
         </div>
     </div>
 
     <div class="col-md-3 mb-2" >
-      <div class="bg-white p-4 rounded-3" style="height: 13rem; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-        <div class="d-flex justify-content-between mb-4" style="margin-top:1rem;">
-            <i class="fa fa-chart-line" style='font-size:1.5rem;'></i>
-            <p class="text-success fw-bold mb-0" style="font-size: 1.1rem;">+18% &#x2191;</p>
+      <div class="bg-white p-4 rounded-3 header-div" >
+        <div class="d-flex justify-content-between mb-4 header-sub-div">
+            <i class="fa fa-chart-line icon"></i>
+            <p class="fw-bold mb-0 green-text" >+18% &#x2191;</p>
           </div> 
-        <p class="text-secondary mb-2" style="font-size: 1.3rem;">Total Revenue</p>
-        <h2 style="font-size: 2rem;">$37,193.00</h2>
+        <p class="text-secondary mb-2">Total Revenue</p>
+        <h2 >$37,193.00</h2>
       </div>
     </div>
 
     <div class="col-md-3 mb-2" >
-      <div class="bg-white p-4 rounded-3" style="height: 13rem; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-        <div class="d-flex justify-content-between mb-4" style="margin-top:1rem;">
-            <i class="fa fa-users mb-0" style='font-size:1.5rem;'></i>
-            <p class="text-success fw-bold  mb-0" style="font-size: 1.1rem;">+18% &#x2191;</p>
+      <div class="bg-white p-4 rounded-3 header-div">
+        <div class="d-flex justify-content-between mb-4 header-sub-div" >
+            <i class="fa fa-users mb-0 icon"></i>
+            <p class="fw-bold mb-0 green-text">+18% &#x2191;</p>
           </div>
-        <p class="text-secondary mb-2" style="font-size: 1.3rem;">Total Views</p>
-        <h2 style="font-size: 2rem;">983.4 M</h2>
+        <p class="text-secondary mb-2" >Total Views</p>
+        <h2>983.4 M</h2>
       </div>
     </div>
 
     <div class="col-md-3 mb-2" >
-      <div class="bg-white p-4 rounded-3" style="height: 13rem; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-        <div class="d-flex justify-content-between mb-4" style="margin-top:1rem;">
-            <i class="fa fa-shopping-bag" style='font-size:1.5rem;'></i>
-            <p class="text-success fw-bold  mb-0" style="font-size: 1.1rem;">+18% &#x2191;</p>
+      <div class="bg-white p-4 rounded-3 header-div">
+        <div class="d-flex justify-content-between mb-4 header-sub-div" >
+            <i class="fa fa-shopping-bag icon" ></i>
+            <p class="fw-bold mb-0 green-text">+18% &#x2191;</p>
           </div>
-        <p class="text-secondary mb-2" style="font-size:1.3rem;">Total watch time</p>
-        <h2 style="font-size: 2rem;">3,500 hours</h2>
+        <p class="text-secondary mb-2">Total watch time</p>
+        <h2>3,500 hours</h2>
       </div>
     </div>
   </div>
 
-  <div class="row"  style="margin-top:1rem;">
+  <div class="row">
 
     <!-- <div class="col-md-6" > -->
         <div class="col-lg-6 mb-2">
-        <div class="bg-white p-3 rounded" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); height:26rem">
-          <div class="d-flex justify-content-between align-items-center smaller-height-div" style="border-bottom:2px solid rgb(112, 111, 111); height:5rem">
-            <h2 style="font-size:1.5rem">Revenue</h2>
-            <span class="fa fa-ellipsis-h" style="font-size: 1.3rem; margin-right: 1rem; color: rgb(202, 202, 202); "></span>
+        <div class="bg-white p-3 rounded graph-div">
+          <div class="d-flex justify-content-between align-items-center smaller-height-div" >
+            <h3 >Revenue</h3>
+            
+            <div class="dropdown">
+                <span id="dropdownMenu" data-toggle="dropdown">
+                    <i class="fas fa-ellipsis-h"></i>
+                  </span>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                <!-- Dropdown items go here -->
+                <a class="dropdown-item" href="#">Item 1</a>
+                <a class="dropdown-item" href="#">Item 2</a>
+                <a class="dropdown-item" href="#">Item 3</a>
+              </div>
+            </div>
+        
           </div>
           <div class="mt-3">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between ">
                 <h1>$112,340</h1>
                 <div class="d-flex toggle">
                     <div class="row toggle2">
@@ -309,15 +483,27 @@
       
       <!-- <div class="col-md-6"> -->
         <div class="col-lg-6 mb-2">
-        <div class="bg-white p-3 rounded" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  height:26rem">
+        <div class="bg-white p-3 rounded graph-div">
+            <div class="d-flex justify-content-between align-items-center border-donut">
 
-              <div class="d-flex row justify-content-between align-items-center height-div" style="border-bottom: 2px solid rgb(112, 111, 111); height: 5rem">
+              <div class="d-flex row justify-content-between align-items-center height-div">
                 <h4 class="mb-0">Audience</h4>
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="mb-0 mr-auto para" style="color: rgb(100, 100, 100); margin-bottom: 0;">Views gained by all the channels</p>
-                    <i class="fa fa-ellipsis-h mb-4 mr-4" style="font-size: 1.3rem; margin-right: 1rem;"></i>
-                </div>
+                <p class="mb-0 mr-auto para" style="color: rgb(100, 100, 100);">Views gained by all the channels</p>
             </div>
+    
+                    <div class="dropdown">
+                        <span id="dropdownMenu" data-toggle="dropdown">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </span>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                        <!-- Dropdown items go here -->
+                        <a class="dropdown-item" href="#">Item 1</a>
+                        <a class="dropdown-item" href="#">Item 2</a>
+                        <a class="dropdown-item" href="#">Item 3</a>
+                      </div>
+                    </div>
+
+                </div>
             
       
               <div class="container mt-3">
@@ -363,15 +549,15 @@
 
         </div>
       </div>
-      
-
     </div>
+
+ 
     
         <div class="row" style="padding: 0.2rem; margin-top:1rem;">
 
             <div class="col-lg-9 mb-2" style="height: 30rem;">
                 <div class="bg-white p-3 rounded" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); height:30rem">
-                    <div class="d-flex  justify-content-between align-items-center" style="border-bottom: 2px solid rgb(112, 111, 111); height: 4rem">
+                    <div class="d-flex  justify-content-between align-items-center" style="border-bottom: 2px solid rgb(112, 111, 111); height: 4.5rem">
                         <h2 style="font-size:1.5rem; margin-left:1rem">Viewers Map</h2>
                         <div class="d-flex ">
                             <div class="row toggle3">
@@ -393,7 +579,7 @@
         
             <div class="col-lg-3 mb-3" style="height: 30rem;">
                 <div class="bg-white p-3 rounded" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); height: 30rem;">
-                    <div class="d-flex  justify-content-between align-items-center" style="border-bottom: 2px solid rgb(112, 111, 111); height: 4rem">
+                    <div class="d-flex  justify-content-between align-items-center" style="border-bottom: 2px solid rgb(112, 111, 111); height: 4.5rem">
                         <h2 style="font-size:1.5rem">Channels</h2>
                         <a href="#" class="view-all-link">View all ></a>
 
@@ -402,7 +588,7 @@
                       
            
                             <div class="d-flex ml-0" style="padding: top 2rem;">
-                                <div class="circle">
+                                <div class="circle" style="margin-right: 0.5rem;">
                                     <img src="ntv_live3.jpg" alt="Telugu TV Logo" >
                                 </div>
                                     <div style="margin-left: 0.5rem;">
@@ -555,6 +741,168 @@
             </div>
         </div>
 
+        <div class="container-fluit mb-3">
+            <div class="col-lg-12 mb-4">
+              <div class="d-flex justify-content-end">
+                <div class="mr-4 mt-1">
+                  <p>Social Presence</p>
+                </div>
+                <div class="dropdown" style="margin-bottom: 2rem;">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 2rem; background-color: white; color:black; padding-bottom:10px;">
+                    Weekly
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Option 1</a>
+                    <a class="dropdown-item" href="#">Option 2</a>
+                    <a class="dropdown-item" href="#">Option 3</a>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="bg-light p-3 rounded social-presence-after-div" >
+                <!-- Your content goes here -->
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <!-- First Div -->
+                      <div class="bg-white p-3 rounded last-big-div" >
+                        <div class="d-flex justify-content-between mb-0 facebook">
+                            
+                            <p class=" fw-bold mb-2 ">Facebook</p>
+                            
+                            
+                            <div class="d-flex row status-div">
+                                <p class="mb-0 ">Status &#9679; </p>
+                                <h7 class="mb-0 ml-0">Connected</h7>
+                            </div>            
+                            
+                        </div>
+                        <i class="fab fa-facebook-square social-icon"></i>
+                        
+                        <div class="d-flex justify-content-between mt-3 below-icon">
+                        <div class="row last-sub-div">
+                            <h2 class=" fw-bold mb-0 ">99 <i class='fas fa-arrow-up '></i></h2>
+                            <h3 class="mb-0">Posts</h3>
+                        </div>
+                        <div class="row last-sub-div2 ml-2">
+                            <h2 class=" fw-bold  mb-2 ">20k <i class='fas fa-arrow-up' ></i></h2>
+                             <h3 >Following</h3>
+                        </div>
+                        <div class="row last-sub-div">
+                            <h2 class=" fw-bold mb-2 ">22k <i class='fas fa-arrow-up'></i></h2>
+                            <h3>Followers</h3>
+                        </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <!-- Second Div -->
+                      <div class="bg-white p-3 rounded last-big-div" >
+                        <div class="d-flex justify-content-between mb-0 facebook">
+                            
+                            <p class=" fw-bold mb-2 ">Youtube</p>
+                            
+                            
+                            <div class="d-flex row status-div " >
+                                <p class="mb-0 ">Status &#9679; </p>
+                                <h7 class="mb-0 ml-0">Connected</h7>
+                            </div>            
+                            
+                        </div>
+
+                        <!-- <i class="fa fa-youtube-square"></i> -->
+                        <img src="yt.svg" class="svg-icons" alt="SVG Icon" >
+                        <div class="d-flex justify-content-between mt-3 below-icon">
+                        <div class="row last-sub-div">
+                            <h2 class=" fw-bold mb-0 ">46 <i class='fas fa-arrow-up'></i></h2>
+                            <h3 class="mb-0">Posts</h3>
+                        </div>
+                        <div class="row last-sub-div2 ml-2" >
+                            <h2 class=" fw-bold  mb-2 ">30k <i class='fas fa-arrow-up'></i></h2>
+                             <h3 >Following</h3>
+                        </div>
+                        <div class="row last-sub-div" >
+                            <h2 class=" fw-bold mb-2 ">33k <i class='fas fa-arrow-down'></i></h2>
+                            <h3>Followers</h3>
+                        </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <!-- Third Div -->
+                      <div class="bg-white p-3 rounded last-big-div">
+                        <div class="d-flex justify-content-between mb-0 facebook">
+                            
+                            <p class=" fw-bold mb-2 ">Instagram</p>
+                            
+                            
+                            <div class="d-flex row status-div"  >
+                                <p class="mb-0 ">Status &#9679; </p>
+                                <h7 class="mb-0 ml-0">Connected</h7>
+                            </div>            
+                            
+                        </div>
+                        <!-- <i class="fa-brands fa-instagram"></i> -->
+                      <img src="insta.svg" alt="SVG Icon" class="svg-icons" >
+                        <div class="d-flex justify-content-between mt-3 below-icon">
+                        <div class="row last-sub-div">
+                            <h2 class=" fw-bold mb-0 ">87 <i class='fas fa-arrow-up' ></i></h2>
+                            <h3 class="mb-0">Posts</h3>
+                        </div>
+                        <div class="row last-sub-div2 ml-2" >
+                            <h2 class=" fw-bold  mb-2 ">44k <i class='fas fa-arrow-up' ></i></h2>
+                             <h3 >Following</h3>
+                        </div>
+                        <div class="row last-sub-div" >
+                            <h2 class=" fw-bold mb-2 ">55k <i class='fas fa-arrow-up' ></i></h2>
+                            <h3>Followers</h3>
+                        </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <!-- Fourth Div -->
+                      <div class="bg-white p-3 rounded last-big-div">
+                        <div class="d-flex justify-content-between mb-0 facebook">
+                            
+                            <p class=" fw-bold mb-2 ">Twitter</p>
+                            
+                            
+                            <div class="d-flex row status-div"  >
+                                <p class="mb-0 ">Status &#9679; </p>
+                                <h7 class="mb-0 ml-0" style="color:#be0606"> Not Connected</h7>
+                            </div>            
+                            
+                        </div>
+                        <img src="twitter.svg" alt="SVG Icon" class="svg-icons" >
+                        
+                        <div class="d-flex justify-content-between mt-4 below-icon">
+                        <div class="row last-sub-div">
+                            <h2 class=" fw-bold mb-0 ">23 <i class='fas fa-arrow-up'></i></h2>
+                            <h3 class="mb-0">Posts</h3>
+                        </div>
+                        <div class="row last-sub-div2 ml-2" >
+                            <h2 class=" fw-bold  mb-2 ">31k <i class='fas fa-arrow-up'></i></h2>
+                             <h3 >Following</h3>
+                        </div>
+                        <div class="row last-sub-div" >
+                            <h2 class=" fw-bold mb-2 ">26k <i class='fas fa-arrow-down'></i></h2>
+                            <h3>Followers</h3>
+                        </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+
 
 
     </div>
@@ -562,7 +910,3 @@
 
 </body>
 </html>
-
-
-
-
